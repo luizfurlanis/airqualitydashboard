@@ -1,9 +1,11 @@
-# Road Accident Dashboar 
+# Road Accident Dashboard
 > _This application was made with [Shiny](https://shiny.rstudio.com/), a web framework for R and Python._
 
 ## About 
 
-The main purpose of this project was to learn how to manipulate data, create dashboards with leaflet and in addition to show a problem that have big importance in the society context. This application in only showing **fatal** accidents, if we consider **non fatal** accidents the number of occurrences would have been enormous.
+The Road Accident Dashboard was made at first to learn specific features like map creation with **Leaflet** and apps creation with **Shiny**, in addition the
+dashboard help to visualize a serious problem, witch is the road accidents, in this case we look only to Australia, even though it is possible to see that the cases continue to grow all over the years, for many different factor. 
+Besides it, the application can be used like a model for many other data type, you just need to change the plot in the data, the input values and then you will have a complete dashboard, for any purpose you want.
 
 ### Data
 
@@ -38,7 +40,7 @@ server <- function(input,output,session) {
 }
 ```
 
-Now your map is already working, the only thing that we have to do is to plot the data, that we collect. In this case de _Australian Fatal Road Accident_ data. To plot the data it was used a reactive ambient inside the server function, then when the user changes the year input, the plot will change "automatically".
+Now your map is already working, the only thing that we have to do is to plot the data, that we collect. In this case de _Australian Fatal Road Accident_ data. To plot it, was used a reactive ambient inside the server function, then when the user changes the year input, the plot will change "automatically".
 
 Ploting the data:
 ```r
