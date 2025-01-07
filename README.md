@@ -5,6 +5,7 @@
 
 The Road Accident Dashboard was made at first to learn specific features like map creation with **Leaflet** and apps creation with **Shiny**, in addition the
 dashboard help to visualize a serious problem, witch is the road accidents, in this case we look only to Australia, even though it is possible to see that the cases continue to grow all over the years, for many different factor. 
+
 Besides it, the application can be used like a model for many other data type, you just need to change the plot in the data, the input values and then you will have a complete dashboard, for any purpose you want.
 
 ### Data
