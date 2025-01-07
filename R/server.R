@@ -1,5 +1,5 @@
-
-
 server <- function(input, output, session) {
-  md.map()
+
+  md.map(data = input$year)
+
 }
