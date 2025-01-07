@@ -1,3 +1,5 @@
+library(dplyr)
+
 data <- read.csv("C:/Users/LuizOctavioFurlanis/Documents/GitHub/Luiz Furlanis/roadaccidentdashboard/data/RoadAccidentData.csv")
 
 map_df <- data |>

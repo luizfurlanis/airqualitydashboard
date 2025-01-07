@@ -2,6 +2,7 @@ library(bslib)
 library(shiny)
 library(leaflet)
 
+
 ui <- page_sidebar(
 
   title = "Australian Road Accidents",
