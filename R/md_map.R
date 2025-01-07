@@ -7,17 +7,32 @@ md.map_UI <- function(id = 'map') {
 
 
 
-md.map <- function(id = 'map', data) {
+md.map <- function(id = 'map', select_year, map_df) {
   moduleServer(id,function(input, output, session) {
 
+    filtered <- reactive({
+      map_df |>
+        filter(Year == select_year())
+    })
+
     output$leaflet <- renderLeaflet({
-      leaflet(map_df) %>%
+      leaflet() %>%
         addTiles() %>%
+        setView(133.7751, -30.6753, zoom = 4)
+    })
+
+    observe({
+      req(filtered())
+      data <- filtered()
+
+      leafletProxy(session$ns("leaflet")) %>%
+        clearMarkers() %>%
         addCircleMarkers(
+          data = data,
           lng = ~long,
           lat = ~lat,
           popup = ~city,
-          radius = ~sqrt(n) * 3,
+          radius = ~n,
           label = ~paste(city, ":", n),
           labelOptions = labelOptions(
             textsize = "12px",
@@ -26,9 +41,7 @@ md.map <- function(id = 'map', data) {
           weight = 0,
           fillColor = "red",
           fillOpacity = 0.5
-        ) %>%
-        setView(133.7751, -30.6753, zoom = 4)
+        )
     })
-    }
-  )
+  })
 }

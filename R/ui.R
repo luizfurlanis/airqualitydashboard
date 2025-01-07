@@ -17,7 +17,7 @@ ui <- page_sidebar(
         p("Please choose the slider input below to adjust the data set in the map."),
 
         sliderInput('year', "Select Year",
-                    min = 1990, max = 2020, value = 2010,
+                    min = min(map_df$Year), max = max(map_df$Year), value = min(map_df$Year),
                     step = 1, sep = ""
         )
       ),
