@@ -14,7 +14,7 @@ The dataset that was used in this project is available at [Kaggle](https://www.k
 
 ## Production
 
-To create the map, the [Leaflet](https://github.com/Leaflet/Leaflet) package was used, to use this package you just need to install it in your workbench.  
+To create the map, the [Leaflet](https://github.com/Leaflet/Leaflet) package was used, a framework that helps and make easier to create maps or graphics.  
 
 Leaflet installation:
 ```r
@@ -60,6 +60,7 @@ observe({
       fillColor = "red",
       fillOpacity = 0.5
       )
+})
 ```
 Now you have the map with the plots you want,and it changes accordingly with the user input. 
 
