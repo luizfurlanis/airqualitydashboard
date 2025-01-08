@@ -1,8 +1,7 @@
 md.map_UI <- function(id = 'map') {
   ns <- NS(id)
 
-  leafletOutput(ns("leaflet"))
-
+    leafletOutput(ns("leaflet"))
 }
 
 
@@ -16,9 +15,9 @@ md.map <- function(id = 'map', select_year, map_df) {
     })
 
     output$leaflet <- renderLeaflet({
-      leaflet() %>%
+      leaflet(options = leafletOptions(minZoom = 4)) %>%
         addTiles() %>%
-        setView(133.7751, -30.6753, zoom = 4)
+        setView(-4.5511, 54.2378, zoom = 5)
     })
 
     observe({
@@ -31,16 +30,10 @@ md.map <- function(id = 'map', select_year, map_df) {
           data = data,
           lng = ~long,
           lat = ~lat,
-          popup = ~city,
-          radius = ~n,
-          label = ~paste(city, ":", n),
-          labelOptions = labelOptions(
-            textsize = "12px",
-            opacity = 0.8
-          ),
           weight = 0,
-          fillColor = "red",
-          fillOpacity = 0.5
+          color = "red",
+          opacity = 1.0,
+          clusterOptions = markerClusterOptions(),
         )
     })
   })

@@ -1,11 +1,8 @@
 library(dplyr)
 
-data <- read.csv("C:/Users/LuizOctavioFurlanis/Documents/GitHub/Luiz Furlanis/roadaccidentdashboard/data/RoadAccidentData.csv")
+data <- read.csv("C:/Users/LuizOctavioFurlanis/Documents/GitHub/Luiz Furlanis/roadaccidentdashboard/data/RoadAccident.csv")
 
 map_df <- data |>
-  select(Year, city, lat, long) |>
-  group_by(city, Year) |>
-  mutate(n = n()) |>
-  distinct(Year, city, .keep_all = TRUE)
+  select(Year, lat = Latitude, long = Longitude)
 
 
