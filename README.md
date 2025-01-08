@@ -1,18 +1,16 @@
-# Road Accident Dashboard
+# Traffic Accident Dashboard
 > _This application was made with [Shiny](https://shiny.rstudio.com/), a web framework for R and Python._
 
 ## About 
 
-The Road Accident Dashboard was made at first to learn specific features like map creation with **Leaflet** and apps creation with **Shiny**, in addition the
-dashboard help to visualize a serious problem, witch is the road accidents, in this case we look only to Australia, even though it is possible to see that the cases continue to grow all over the years, for many different factor. 
+The UK government amassed traffic data from 2000 and 2014, recording over **1.5 million** accidents in the process and making this one of the most comprehensive traffic data sets out there. It's a huge picture of a country undergoing change. All the contained accident data comes from police reports, so this data does not include minor incidents.
 
-Besides it, the application can be used like a model for many other data type, you just need to change the plot in the data, the input values and then you will have a complete dashboard, for any purpose you want.
+The Traffic Accident Dashboard was made at first to learn specific features like map creation with **Leaflet** and apps creation with **Shiny**, in addition the
+dashboard help to visualize a serious problem, witch is the traffic accidents, in this case we look only to UK, even though it is possible to see that the cases continue to grow all over the years, for many different factor. To have a idea of bad this situation is, the combined number of accidents all over the year displayed in the application is 1.504.150. This number is almost all the Northern Ireland in numbers of population.
 
-### Data
+Besides the data part of the accidents, the application can be used like a model for many other data type that uses a map and a generic input, you just need to change the plot in the data, the input values and then you will have a complete dashboard, for any purpose you want.
 
-The Australian Road Deaths Database provides basic details of road transport crash fatalities in Australia as reported by the police year to the State and Territory road safety authorities. Road deaths from recent months are preliminary and the series is subject to revision. 
-
-The dataset that was used in this project is available at [Kaggle](https://www.kaggle.com/datasets) website, they have different datasets of all niches. I used the [Australian Fatal Road Accident](https://www.kaggle.com/datasets/deepcontractor/australian-fatal-car-accident-data-19892021), but they have many others car crash datasets.
+The dataset that was used in this project is available at [Kaggle](https://www.kaggle.com/datasets) website, they have different datasets of all niches. I used the [UK Traffic Accidents](https://www.kaggle.com/datasets/daveianhickey/2000-16-traffic-flow-england-scotland-wales), but they have many others car crash datasets.
 
 ## Production
 
@@ -63,7 +61,9 @@ observe({
       fillOpacity = 0.5
       )
 ```
-Now you have the map with the plots, that change accordingly with the user input. Have fun :smiley:
+Now you have the map with the plots you want,and it changes accordingly with the user input. 
+
+Have fun :smiley:
 
 
 
