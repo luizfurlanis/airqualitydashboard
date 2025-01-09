@@ -17,7 +17,7 @@ md.map <- function(id = 'map', select_year, map_df) {
     output$leaflet <- renderLeaflet({
       leaflet(options = leafletOptions(minZoom = 4)) %>%
         addTiles() %>%
-        setView(-4.5511, 54.2378, zoom = 5)
+        setView(-4.5511, 54.2378, zoom = 6)
     })
 
     observe({
