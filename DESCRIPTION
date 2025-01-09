@@ -1,10 +1,10 @@
 Package: roadaccidentdashboard
 Type: Package
-Title: Australian Fatal Road Accident Dashbaord
+Title: UK Traffic Accident Dashboard
 Version: 0.1.0
 Author: Luiz Octavio Furlanis
 Maintainer: Luiz Octavio Furlanis <furlanis.lu@gmail.com>
-Description: This R&Shiny dashboard allows the user to visualize the fatal road accidents, that have been accoured in Autralia, from 1989 to 2021.
+Description: This R&Shiny dashboard allows the user to visualize the road accidents, that have been accoured in UK, from 2005 to 2014.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
