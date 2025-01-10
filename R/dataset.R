@@ -1,5 +1,3 @@
-library(dplyr)
-
 data <- read.csv("inst/data/RoadAccident.csv")
 
 map_df <- data |>

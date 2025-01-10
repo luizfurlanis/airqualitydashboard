@@ -14,5 +14,10 @@ Depends:
   bslib,
   shiny,
   glue
-  
+Imports:
+  dplyr,
+  leaflet,
+  bslib,
+  shiny,
+  glue
 
