@@ -3,7 +3,7 @@ if (!exists("cached_graphic_df")) cached_graphic_df <- NULL
 
 
 data <- read.csv("inst/data/RoadAccident.csv")
-# total_data <- read.csv("inst/data/accidents_2012_to_2014.csv")
+total_data <- read.csv("inst/data/accidents_2012_to_2014.csv")
 
 map_df <- data |>
   select(Year, lat = Latitude, long = Longitude)

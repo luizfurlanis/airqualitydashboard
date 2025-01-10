@@ -13,5 +13,6 @@ Depends:
   leaflet,
   bslib,
   shiny,
-  glue
+  glue,
+  echarts4r
 
