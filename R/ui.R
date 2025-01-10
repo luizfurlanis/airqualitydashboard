@@ -12,6 +12,10 @@ ui <- page_navbar(
 
   nav_panel(
     title = "Graphics",
+    page_sidebar(
+      sidebar = md.card,
+      md.graphic_UI()
+    )
 
   )
 )
