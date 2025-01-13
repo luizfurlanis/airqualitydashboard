@@ -94,7 +94,7 @@ server <- function(input,output,session) {
 As you can see, differently tha leaflet map, the plots are not needed here, because it is only a chart, not a map or a tribble that need a ploting functions,
 so with only these simple commands you already create you bar chart, to use whatever you wnat to. You only need to change the data, then it is a new graphic.
 
-Now that you have your map and your graphic, you can combine them in a Shiny app like this one, or use how you desire to, Thank you for read this and have fun :smiley:
+Now that you have your map and graphic, you can combine them in a Shiny app like this one, or use how you desire to. Have fun :smiley:
 
 
 
