@@ -1,9 +1,8 @@
 md.map_UI <- function(id = 'map') {
   ns <- NS(id)
 
-    leafletOutput(ns("leaflet"))
+  leafletOutput(ns("leaflet"))
 }
-
 
 md.map <- function(id = 'map', select_year, map_df) {
   moduleServer(id,function(input, output, session) {

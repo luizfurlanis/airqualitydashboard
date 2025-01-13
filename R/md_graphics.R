@@ -1,9 +1,7 @@
 md.graphic_UI <- function(id = 'graphic') {
   ns <- NS(id)
-  tagList(
 
-    echarts4rOutput(ns('plot'))
-  )
+  echarts4rOutput(ns('plot'))
 }
 
 md.graphic <- function(id = 'graphic', data_table, select_year) {
