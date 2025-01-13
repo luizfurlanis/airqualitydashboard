@@ -63,7 +63,7 @@ observe({
       )
 })
 ```
-Now you have the map with the plots you want,and it changes accordingly with the user input. 
+Now you have the map with the plots you want, and it changes accordingly with the user input. 
 
 Have fun :smiley:
 
