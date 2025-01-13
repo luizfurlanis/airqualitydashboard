@@ -15,12 +15,14 @@ The dataset that was used in this project is available at [Kaggle](https://www.k
 
 ## Production
 
-To create the map, the [Leaflet](https://github.com/Leaflet/Leaflet) package was used, a framework that helps and make easier to create maps or graphics.  
+To create the visual data, the [Leaflet](https://github.com/Leaflet/Leaflet) package was used, a framework that helps and make easier to create maps or graphics.
 
 Leaflet installation:
 ```r
 install.packages("leaflet")
 ```
+
+### Leaflet
 
 To create the map, the package has it own function, so you just need to call this function and write the parameter that you want.
 
@@ -35,8 +37,9 @@ server <- function(input,output,session) {
 
   output$leaflet <- renderLeaflet({
       leaflet() %>%
-        addTiles() %>%
-        setView(latitude = 133.7751, longitude = -30.6753, zoom = 4)
+      addTiles() %>%
+      setView(latitude = 133.7751, longitude = -30.6753, zoom = 4)
+  })
 }
 ```
 
@@ -65,7 +68,33 @@ observe({
 ```
 Now you have the map with the plots you want, and it changes accordingly with the user input. 
 
-Have fun :smiley:
+### echarts4r
+
+Now, to cheate a graphic in echarts, just like leaflet it has the function to it, in this specific case we are using the bar chart.
+
+Bar chart creation:
+```r
+ui <- fluidPage(
+
+  echarts4rOutput('chart')
+)
+
+server <- function(input,output,session) {
+
+  output$chart <- renderEcharts4r({
+      summarise() |>
+        e_charts(Day_of_Week) |>
+        e_bar(Total) |>
+        e_title("Quantidade de Ocorrencias por dia da semana") |>
+        e_x_axis(name ="Dia da Semana") |>
+        e_tooltip(trigger = "axis")
+    })
+}
+```
+As you can see, differently tha leaflet map, the plots are not needed here, because it is only a chart, not a map or a tribble that need a ploting functions,
+so with only these simple commands you already create you bar chart, to use whatever you wnat to. You only need to change the data, then it is a new graphic.
+
+Now that you have your map and your graphic, you can combine them in a Shiny app like this one, or use how you desire to, Thank you for read this and have fun :smiley:
 
 
 
