@@ -20,7 +20,7 @@ md.graphic <- function(id = 'graphic', data_table, select_year) {
         e_charts(Day_of_Week) |>
         e_bar(Total) |>
         e_title("Quantidade de Ocorrencias por dia da semana") |>
-        e_x_axis(name ="Dia da Semana") |>
+        e_x_axis(name ="Dia da Semana", type = "category") |>
         e_tooltip(trigger = "axis")
     })
   }
