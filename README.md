@@ -1,5 +1,6 @@
 # Traffic Accident Dashboard
 > _This application was made with [Shiny](https://shiny.rstudio.com/), a web framework for R and Python._
+> _This app is available at: [TrafficAccidentDashboard](https://furlanis.shinyapps.io/TrafficAccident/)_
 
 ## About 
 
