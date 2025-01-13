@@ -1,6 +1,5 @@
 # Traffic Accident Dashboard
-> _This application was made with [Shiny](https://shiny.rstudio.com/), a web framework for R and Python._
-> _This app is available at: [TrafficAccidentDashboard](https://furlanis.shinyapps.io/TrafficAccident/)_
+> _This application was made with [Shiny](https://shiny.rstudio.com/), a web framework for R and Python. This app is available at: [TrafficAccidentDashboard](https://furlanis.shinyapps.io/TrafficAccident/)_
 
 ## About 
 
@@ -15,11 +14,12 @@ The dataset that was used in this project is available at [Kaggle](https://www.k
 
 ## Production
 
-To create the visual data, the [Leaflet](https://github.com/Leaflet/Leaflet) package was used, a framework that helps and make easier to create maps or graphics.
+To create the map, the [Leaflet](https://github.com/Leaflet/Leaflet) and the [echarts4r](https://echarts4r.john-coene.com) package was used, both framework helps and make easier to create interactive maps and graphics.  
 
-Leaflet installation:
+Leaflet and echarts4r installation:
 ```r
 install.packages("leaflet")
+install.packages("echarts4r")
 ```
 
 ### Leaflet
