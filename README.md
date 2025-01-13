@@ -15,11 +15,12 @@ The dataset that was used in this project is available at [Kaggle](https://www.k
 
 ## Production
 
-To create the map, the [Leaflet](https://github.com/Leaflet/Leaflet) package was used, a framework that helps and make easier to create maps or graphics.  
+To create the map, the [Leaflet](https://github.com/Leaflet/Leaflet) and the [echarts4r](https://echarts4r.john-coene.com) package was used, both framework helps and make easier to create interactive maps and graphics.  
 
-Leaflet installation:
+Leaflet and echarts4r installation:
 ```r
 install.packages("leaflet")
+install.packages("echarts4r")
 ```
 
 To create the map, the package has it own function, so you just need to call this function and write the parameter that you want.
