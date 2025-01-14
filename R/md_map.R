@@ -10,7 +10,8 @@ md.map <- function(id = 'map', select_year, map_df) {
     filtered <- reactive({
       map_df |>
         filter(Year == select_year())
-    })
+    }) |>
+      bindCache(select_year())
 
     output$leaflet <- renderLeaflet({
       leaflet(options = leafletOptions(minZoom = 4)) %>%
@@ -24,15 +25,17 @@ md.map <- function(id = 'map', select_year, map_df) {
 
       leafletProxy(session$ns("leaflet")) %>%
         clearMarkers() %>%
-        addCircleMarkers(
+        addMarkers(
           data = data,
           lng = ~long,
           lat = ~lat,
-          weight = 0,
-          color = "red",
-          opacity = 1.0,
-          clusterOptions = markerClusterOptions(),
+          clusterOptions = markerClusterOptions(
+            spiderfyOnMaxZoom = FALSE,
+            removeOutsideVisibleBounds = TRUE,
+            disableClusteringAtZoom = 15,
+          ),
         )
-    })
+    }) |>
+      bindEvent(filtered(), ignoreNULL = FALSE)
   })
 }
