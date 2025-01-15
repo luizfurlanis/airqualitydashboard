@@ -25,9 +25,12 @@ md.map <- function(id = 'map', select_year, map_df) {
 
       leafletProxy(session$ns("leaflet")) %>%
         clearMarkers() %>%
-        addMarkers(
+        addCircleMarkers(
           data = data,
           lng = ~long,
+          color = "darkred",
+          opacity = 0.78,
+          weight = 0,
           lat = ~lat,
           clusterOptions = markerClusterOptions(
             spiderfyOnMaxZoom = FALSE,
