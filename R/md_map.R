@@ -27,11 +27,11 @@ md.map <- function(id = 'map', select_year, map_df) {
         clearMarkers() %>%
         addCircleMarkers(
           data = data,
+          lat = ~lat,
           lng = ~long,
           color = "darkred",
           opacity = 0.78,
           weight = 0,
-          lat = ~lat,
           clusterOptions = markerClusterOptions(
             spiderfyOnMaxZoom = FALSE,
             removeOutsideVisibleBounds = TRUE,
