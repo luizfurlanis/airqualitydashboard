@@ -3,7 +3,7 @@ md.card <- sidebar(
   card(
 
     card_title(h3(strong("About"))),
-    card_header(h6("This app gives a visual overview of road accidents that occures in UK over the years")),
+    card_header(p("This app gives a overview of road accidents that have occured in the United Kingdom over the years")),
     card_body(
       p("Please choose the slider input below to adjust the data set in the map."),
 
@@ -12,11 +12,11 @@ md.card <- sidebar(
                   step = 1, sep = ""
       )
     ),
-    h3(strong("Dataset Information")),
-    p("The map and the graphics, shows road accidents over the years in th coutrys of UK,
-        this app was design to study and observe patern between this accidents."),
-    p("more that i do not know what can i write, so i am writing anything to fill off the part that i want,
-        probably no one will know that it is not important writen here, bacause they will not lost their time reading something stupid.")
-
+    card_title(h3(strong("Dataset Information"))),
+    card_body(
+      p('On this dashboard we show the number of occurences per local in the map at the inicial page and at the graphic page the occurences per day of the week,
+      that allows us to crate "rules" or patterns about this data visualization. Then this ideas can be used for any porpouse, like data study or even a solution
+      for this accidents problems.')
+    )
   )
 )
