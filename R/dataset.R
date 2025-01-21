@@ -21,3 +21,14 @@ graphic_df <- total_data |>
     total_data$Day_of_Week == 7 ~ 'Saturday',
   )) |>
   mutate(Day_of_Week = factor(Day_of_Week, levels = order_days))
+
+
+
+resp <- read.csv("inst/data/global air pollution dataset.csv")
+
+df <- resp |>
+  select(Country, City, AQI.Value, AQI.Category) |>
+  mutate(AQI.Category = case_when(
+    AQI.Category == 'Unhealthy for Sensitive Groups' ~ 'Unhealthy',
+    TRUE ~ AQI.Category
+  ))
