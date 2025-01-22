@@ -14,5 +14,6 @@ Depends:
   bslib,
   shiny,
   glue,
-  echarts4r
+  echarts4r,
+  tidygeocoder
 
