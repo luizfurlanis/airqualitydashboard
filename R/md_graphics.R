@@ -24,10 +24,3 @@ md.graphic <- function(id = 'graphic', data_table, select_year) {
   }
   )
 }
-
-
-
-
-
-
-
