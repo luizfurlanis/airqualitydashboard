@@ -5,4 +5,10 @@ df.air_pollution <- resp |>
   mutate(AQI.Category = case_when(
     AQI.Category == 'Unhealthy for Sensitive Groups' ~ 'Unhealthy',
     TRUE ~ AQI.Category
-  ))
+  )) |>
+  group_by(AQI.Category) |>
+  mutate(contagem = n()) |>
+  geocode(City, method = "osm")
+
+
+
