@@ -4,7 +4,7 @@ md.graphic_UI <- function(id = 'graphic') {
   echarts4rOutput(ns('plot'))
 }
 
-md.graphic <- function(id = 'graphic', data_table, select_year) {
+md.graphic <- function(id = 'graphic', data_table) {
   moduleServer(id, function(input, output, session) {
 
     output$plot <- renderEcharts4r({
