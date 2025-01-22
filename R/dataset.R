@@ -6,9 +6,10 @@ df.air_pollution <- resp |>
     AQI.Category == 'Unhealthy for Sensitive Groups' ~ 'Unhealthy',
     TRUE ~ AQI.Category
   )) |>
-  group_by(AQI.Category) |>
-  mutate(contagem = n()) |>
   geocode(City, method = "osm")
 
-
+df.count_category <- df.air_pollution |>
+  select(AQI.Category) |>
+  mutate(Total = n()) |>
+  distinct()
 
