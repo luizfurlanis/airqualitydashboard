@@ -1,10 +1,10 @@
 Package: roadaccidentdashboard
 Type: Package
-Title: UK Traffic Accidents Dashboard
+Title: Global Air Pollution
 Version: 0.1.0
 Author: Luiz Octavio Furlanis
 Maintainer: Luiz Octavio Furlanis <furlanis.lu@gmail.com>
-Description: This dashboard allows the user to visualize the road accidents, that have been accoured in UK, from 2005 to 2014.
+Description: This dashboard allows the user to visualize the air quality all over the word.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
