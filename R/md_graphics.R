@@ -7,19 +7,12 @@ md.graphic_UI <- function(id = 'graphic') {
 md.graphic <- function(id = 'graphic', data_table, select_year) {
   moduleServer(id, function(input, output, session) {
 
-    summarise <- reactive({
-      data_table |>
-        filter(Year == select_year()) |>
-        count(Day_of_Week, name = "Total")
-    })
-
     output$plot <- renderEcharts4r({
-      summarise() |>
-        e_charts(Day_of_Week) |>
+      data_table |>
+        e_charts(AQI.Category) |>
         e_bar(Total) |>
-        e_title("Occurences by days of the week") |>
-        e_x_axis(name ="day of the week") |>
-        e_tooltip(trigger = "axis")
+        e_title("Air quality") |>
+        e_x_axis(name ="Air level")
     })
   }
   )
