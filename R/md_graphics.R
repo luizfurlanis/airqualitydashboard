@@ -17,3 +17,16 @@ md.graphic <- function(id = 'graphic', data_table, select_year) {
   }
   )
 }
+
+md.second_graphics_UI <- function(id = 'linegraphic') {
+  ns <- NS(id)
+
+
+}
+
+md.second_graphics <- function(id = 'linegraphic') {
+  moduleServer(id, function(input, output, session) {
+
+    }
+  )
+}
