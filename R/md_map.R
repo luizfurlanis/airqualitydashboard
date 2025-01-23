@@ -7,12 +7,6 @@ md.map_UI <- function(id = 'map') {
 md.map <- function(id = 'map', select_year, map_df) {
   moduleServer(id,function(input, output, session) {
 
-    filtered <- reactive({
-      map_df |>
-        filter(Year == select_year())
-    }) |>
-      bindCache(select_year())
-
     output$leaflet <- renderLeaflet({
       leaflet(options = leafletOptions(minZoom = 4)) %>%
         addTiles() %>%
