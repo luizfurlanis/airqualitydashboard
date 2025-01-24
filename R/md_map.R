@@ -4,35 +4,32 @@ md.map_UI <- function(id = 'map') {
   leafletOutput(ns("leaflet"))
 }
 
-md.map <- function(id = 'map', select_year, map_df) {
+md.map <- function(id = 'map', map_df) {
   moduleServer(id,function(input, output, session) {
 
     output$leaflet <- renderLeaflet({
-      leaflet(options = leafletOptions(minZoom = 4)) %>%
+      leaflet(options = leafletOptions(minZoom = 2)) %>%
         addTiles() %>%
-        setView(-4.5511, 54.2378, zoom = 6)
+        setView(-29.8517, 7.6488, zoom = 4)
     })
 
-    observe({
-      req(filtered())
-      data <- filtered()
+    radius_scale <- sqrt(map_df$AQI.Value) * 0.25
 
-      leafletProxy(session$ns("leaflet")) %>%
-        clearMarkers() %>%
-        addCircleMarkers(
-          data = data,
-          lat = ~lat,
-          lng = ~long,
-          color = "darkred",
-          opacity = 0.78,
-          weight = 0,
-          clusterOptions = markerClusterOptions(
-            spiderfyOnMaxZoom = FALSE,
-            removeOutsideVisibleBounds = TRUE,
-            disableClusteringAtZoom = 15,
-          ),
+    leafletProxy(session$ns("leaflet")) %>%
+      clearMarkers() %>%
+      addCircleMarkers(
+        data = map_df,
+        lat = ~lat,
+        lng = ~long,
+        radius = radius_scale,
+        color = "darkred",
+        weight = 0,
+        label = ~sprintf("%s : %g", Country, AQI.Value),
+        labelOptions = labelOptions(
+          style = list("font-weight" = 'normal', padding = '5px 10px'),
+          textsize = '15px',
+          direction = 'auto'
         )
-    }) |>
-      bindEvent(filtered(), ignoreNULL = FALSE)
+      )
   })
 }
