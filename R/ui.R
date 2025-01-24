@@ -10,7 +10,8 @@ ui <- page_navbar(
 
   nav_panel(
     title = "Graphics",
-    md.graphic_UI()
+    md.graphic_UI(),
+    md.second_graphics_UI()
   )
 )
 
