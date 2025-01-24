@@ -5,8 +5,8 @@ md.card <- sidebar(
     card_title(h3(strong("About"))),
     card_header(p("This app gives a overview of road accidents that have occured in the United Kingdom over the years")),
     card_body(
-      p("Please choose the slider input below to adjust the data set in the map."),
-      selectInput('country', "Select Country", choices = df.count_contry$Country)
+      p("Please choose the map visualization type on the button below"),
+      actionButton("toggle", label = "Visualization")
     ),
     card_title(h3(strong("Dataset Information"))),
     card_body(
