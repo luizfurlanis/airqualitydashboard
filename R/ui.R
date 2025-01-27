@@ -1,6 +1,6 @@
 ui <- page_navbar(
 
-  title = "UK Traffic Accidents",
+  title = "World Air Quality",
   sidebar = md.card,
 
   nav_panel(
