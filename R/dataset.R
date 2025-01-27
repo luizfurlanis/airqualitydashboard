@@ -1,5 +1,5 @@
 resp <- read.csv("inst/data/global.AQI.csv")
-df.count_contry <- read.csv('inst/data/df.count_country')
+df.count_country <- read.csv('inst/data/df.count_country')
 
 df.air_pollution <- resp |>
   select(Country, City, AQI.Value, AQI.Category, lat, long) |>
@@ -8,11 +8,11 @@ df.air_pollution <- resp |>
     TRUE ~ AQI.Category
   ))
 
-df.count_category <- df.air_pollution |>
-  select(AQI.Category) |>
+df.categories <- df.air_pollution |>
+  select(AQI.Category, AQI.Value) |>
   group_by(AQI.Category) |>
-  mutate(Total = n()) |>
-  distinct()
+  mutate(Total = sum(AQI.Value)) |>
+  distinct(AQI.Category, .keep_all = TRUE)
 
 # df.count_country <- df.air_pollution |>
 #   select(Country, AQI.Value) |>

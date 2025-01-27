@@ -4,18 +4,16 @@ md.graphic_UI <- function(id = 'graphic') {
   echarts4rOutput(ns('plot'))
 }
 
-md.graphic <- function(id = 'graphic', data_table) {
+md.graphic <- function(id = 'graphic', data) {
   moduleServer(id, function(input, output, session) {
 
     output$plot <- renderEcharts4r({
-      data_table |>
+      data |>
         e_charts(AQI.Category) |>
-        e_pie(Total, roseType = 'radius') |>
-        e_title("World Air quality") |>
-        e_tooltip()
+        e_pie(AQI.Value, roseType = "radius") |>
+        e_title("teste")
     })
-  }
-  )
+  })
 }
 
 # md.second_graphics_UI <- function(id = 'linegraphic') {

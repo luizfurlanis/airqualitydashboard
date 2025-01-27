@@ -4,7 +4,7 @@ md.map_UI <- function(id = 'map') {
   leafletOutput(ns("leaflet"))
 }
 
-md.map <- function(id = 'map', map_country, map_city, level) {
+md.map <- function(id = 'map', map_country) {
   moduleServer(id,function(input, output, session) {
 
     output$leaflet <- renderLeaflet({
@@ -13,25 +13,19 @@ md.map <- function(id = 'map', map_country, map_city, level) {
         setView(-29.8517, 7.6488, zoom = 4)
     })
 
-    label <- if(level() == "Country") {
-      ~sprintf("%s : %g", Country, AQI.Value)
-    } else {
-      ~sprintf("%s : %g", City, AQI.Value)
-    }
-    map <- if(level() == "Country") map_country else map_city
-    radius_scale <- sqrt(map_df$AQI.Value) * 0.25
+    radius = sqrt(map_country$AQI.Value) * 0.2
 
     leafletProxy(session$ns("leaflet")) %>%
       clearMarkers() %>%
       addCircleMarkers(
-        data = map,
+        data = map_country,
         lat = ~lat,
         lng = ~long,
-        radius = radius_scale,
+        radius = pmax(radius, 7),
         color = "red",
         fillOpacity = 0.55,
         weight = 0,
-        label = label,
+        label = ~sprintf("%s : %g", Country, AQI.Value),
         labelOptions = labelOptions(
           style = list("font-weight" = 'normal', padding = '5px 10px'),
           textsize = '15px',
