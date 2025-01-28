@@ -25,7 +25,7 @@ md.map <- function(id = 'map', map_country) {
         color = "red",
         fillOpacity = 0.55,
         weight = 0,
-        label = ~sprintf("%s : %g", Country, AQI.Value),
+        label = ~sprintf("%s: %g", Country, AQI.Value),
         labelOptions = labelOptions(
           style = list("font-weight" = 'normal', padding = '5px 10px'),
           textsize = '15px',

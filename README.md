@@ -49,30 +49,33 @@ Ploting the data:
 ```r
 observe({
 
-  data <- input$year
-
-  leafletProxy("map") %>%
-    clearMarkers() %>%
+  leafletProxy(session$ns("leaflet")) %>%
+      clearMarkers() %>%
       addCircleMarkers(
-      data = data,
-      lng = ~long,
-      lat = ~lat,
-      popup = ~city,
-      radius = ~n,
-      label = ~paste(city, ":", n),
-      weight = 0,
-      fillColor = "red",
-      fillOpacity = 0.5
+        data = map_country,
+        lat = ~lat,
+        lng = ~long,
+        radius = pmax(radius, 7),
+        color = "red",
+        fillOpacity = 0.55,
+        weight = 0,
+        label = ~sprintf("%s : %g", Country, AQI.Value),
+        labelOptions = labelOptions(
+          style = list("font-weight" = 'normal', padding = '5px 10px'),
+          textsize = '15px',
+          direction = 'auto'
+        )
       )
 })
 ```
-Now you have the map with the plots you want, and it changes accordingly with the user input. 
+Now you have the map with the plots you want. It is possible to make it changes with the user input using reactivity, this is why the observe is there,
+but in this dashboard case we will not use it. 
 
 ### echarts4r
 
-Now, to cheate a graphic in echarts, just like leaflet it has the function to it, in this specific case we are using the bar chart.
+Now, to create the graphics using echarts4r, just like leaflet it has the function to do it, in this specific case we are using the pie chart.
 
-Bar chart creation:
+Pie chart creation:
 ```r
 ui <- fluidPage(
 
@@ -81,18 +84,19 @@ ui <- fluidPage(
 
 server <- function(input,output,session) {
 
-  output$chart <- renderEcharts4r({
-      summarise() |>
-        e_charts(Day_of_Week) |>
-        e_bar(Total) |>
-        e_title("Quantidade de Ocorrencias por dia da semana") |>
-        e_x_axis(name ="Dia da Semana") |>
-        e_tooltip(trigger = "axis")
+    output$chart <- renderEcharts4r({
+      data |>
+        e_charts(AQI.Category) |>
+        e_pie(Total, roseType = 'radius') |>
+        e_title("World Air Quality") |>
+        e_tooltip()
     })
 }
 ```
-As you can see, differently tha leaflet map, the plots are not needed here, because it is only a chart, not a map or a tribble that need a ploting functions,
-so with only these simple commands you already create you bar chart, to use whatever you wnat to. You only need to change the data, then it is a new graphic.
+As you can see, differently that leaflet map, the plots are not needed here, because it is only a chart, not a map or a tribble that need a ploting functions,
+so with only these simple commands you already create your pie chart, to use whatever you want.
+
+To create the second graphic we use echart4r again, but now it is another function. We will use 
 
 Now that you have your map and graphic, you can combine them in a Shiny app like this one, or use how you desire to. Have fun :smiley:
 

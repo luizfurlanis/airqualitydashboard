@@ -1,17 +1,18 @@
 md.graphic_UI <- function(id = 'graphic') {
   ns <- NS(id)
 
-  echarts4rOutput(ns('plot'))
+  echarts4rOutput(ns('chart'))
 }
 
 md.graphic <- function(id = 'graphic', data) {
   moduleServer(id, function(input, output, session) {
 
-    output$plot <- renderEcharts4r({
+    output$chart <- renderEcharts4r({
       data |>
         e_charts(AQI.Category) |>
-        e_pie(AQI.Value, roseType = "radius") |>
-        e_title("teste")
+        e_pie(Total, roseType = 'radius') |>
+        e_title("Cities Indexes") |>
+        e_tooltip()
     })
   })
 }
