@@ -1,4 +1,4 @@
-# sAir Quality Dashboard
+# Air Quality Dashboard
 > _This application was made with [Shiny](https://shiny.rstudio.com/), a web framework for R and Python. This app is available at: [Air Quality Dashboard](https://furlanis.shinyapps.io/TrafficAccident/)_
 
 ## About 
