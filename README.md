@@ -1,22 +1,22 @@
-# Traffic Accident Dashboard
-> _This application was made with [Shiny](https://shiny.rstudio.com/), a web framework for R and Python. This app is available at: [TrafficAccidentDashboard](https://furlanis.shinyapps.io/TrafficAccident/)_
+# sAir Quality Dashboard
+> _This application was made with [Shiny](https://shiny.rstudio.com/), a web framework for R and Python. This app is available at: [Air Quality Dashboard](https://furlanis.shinyapps.io/TrafficAccident/)_
 
 ## About 
 
-The UK government amassed traffic data from 2000 and 2014, recording over **1.5 million** accidents in the process and making this one of the most comprehensive traffic data sets out there. It's a huge picture of a country undergoing change. All the contained accident data comes from police reports, so this data does not include minor incidents.
+The **Air Pollution** is a contamination of the indoor and outdoor environments by any chemical, physical or biological agent that modifies the natural characteristics of the atmosphere, in 2022 this data was collected to show this pollutant environment that we live today.
 
-The Traffic Accident Dashboard was made at first to learn specific features like map creation with **Leaflet** and apps creation with **Shiny**, in addition the
-dashboard help to visualize a serious problem, witch is the traffic accidents, in this case we look only to UK, even though it is possible to see that the cases continue to grow all over the years, for many different factor. To have a idea of bad this situation is, the combined number of accidents all over the year displayed in the application is 1.504.150. This number is almost all the Northern Ireland in numbers of population.
+The Air Quality Dashboard was made at first to learn specific features like map creation with **Leaflet** and apps creation with **Shiny**, in addition the
+dashboard help to visualize a serious problem, witch is the Pollutant environment that we live at, the most common source of pollution are household combustion devices, motor vehicles, industrial facilities and forest fires. The air pollution cause by ourselves is a huge problem and can cause respiratory diseases, grows the mortality level of the place depending on the pollution concentration and many other local problems with the nature around.
 
-Besides the data part of the accidents, the application can be used like a model for many other data type that uses a map and a generic input, you just need to change the plot in the data, the input values and then you will have a complete dashboard, for any purpose you want.
+Besides the data part of the pollution, the application can be used like a model for many other data type that uses a map and a graphic, you just need to change the plot in the data, maybe add some input values and then you will have a complete dashboard, for any purpose you want.
 
-The dataset that was used in this project is available at [Kaggle](https://www.kaggle.com/datasets) website, they have different datasets of all niches. I used the [UK Traffic Accidents](https://www.kaggle.com/datasets/daveianhickey/2000-16-traffic-flow-england-scotland-wales), but they have many others car crash datasets.
+The dataset that was used in this project is available at [Kaggle](https://www.kaggle.com/datasets) website. The data used at this dashboard was the [Global Air Pollution](https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset), but they have many others different datasets.
 
 ## Production
 
 To create the map, the [Leaflet](https://github.com/Leaflet/Leaflet) and the [echarts4r](https://echarts4r.john-coene.com) package was used, both framework helps and make easier to create interactive maps and graphics.  
 
-Leaflet and echarts4r installation:
+Leaflet and Echarts4r installation:
 ```r
 install.packages("leaflet")
 install.packages("echarts4r")
