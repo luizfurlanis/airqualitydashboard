@@ -29,7 +29,7 @@ md.card_map <- sidebar(
     card_body(
       p('The pie chart shows the total number of cities that are on each Air Quality level.'),
       p('In addiction, the bars chart displays the average Air Quality Level,
-        which is calculated by adding all the AQI value from the accounted cities and dividing by theur total number.')
+        which is calculated by adding all the AQI value from the accounted cities and dividing by their total number.')
     )
   )
 )
