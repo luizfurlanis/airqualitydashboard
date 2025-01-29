@@ -14,13 +14,21 @@ df.categories <- df.air_pollution |>
   summarise(Total = n()) |>
   distinct(AQI.Category, .keep_all = TRUE)
 
-df <- data.frame(
-  Category = c("Good","Moderate", "Unhealthy", "Very Unhealthy", "Hazardous"),
-  Value = c("0 - 50", "50 - 100", "100 - 200", "200 - 300", "300 - 500")
-)
+df.media <- resp |>
+  select(Country, AQI.Value) |>
+  group_by(Country) |>
+  mutate(country_number = n()) |>
+  mutate(Average = (sum(AQI.Value) / country_number)) |>
+  distinct(Country, Average, country_number)
+
+
+df.second_graph <- df.media |>
+  left_join(df.count_country) |>
+  summarise(Country, Average) |>
+  arrange(Average)
+
 
 # df.count_country <- df.air_pollution |>
 #   select(Country, AQI.Value) |>
 #   group_by(Country) |>
 #   summarise(AQI.Value = sum(AQI.Value))
-

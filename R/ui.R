@@ -4,14 +4,22 @@ ui <- page_navbar(
 
   nav_panel(
     title = "View Map",
-    sidebar = md.card,
-    md.map_UI()
+    page_sidebar(
+      sidebar = md.card,
+      md.map_UI()
+    ),
   ),
 
   nav_panel(
     title = "Graphics",
-    sidebar = md.card_map,
-    md.graphic_UI()
+    page_sidebar(
+      sidebar = md.card_map,
+      layout_column_wrap(
+        width = 1,
+        md.graphic_UI(),
+        md.second_graphics_UI()
+      )
+    ),
   )
 )
 

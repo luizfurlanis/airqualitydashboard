@@ -15,5 +15,6 @@ Depends:
   shiny,
   glue,
   echarts4r,
-  tidygeocoder
+  tidygeocoder,
+  markdown
 
