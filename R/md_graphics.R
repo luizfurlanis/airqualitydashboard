@@ -38,11 +38,9 @@ md.second_graphics <- function(id = 'linegraphic', data) {
         e_bar(Average) |>
         e_tooltip() |>
         e_legend(show = FALSE) |>
-        e_title("Medium Level") |>
+        e_title("Average AQI") |>
         e_datazoom(
-          type = 'slider',
-          start = 40,
-          end = 60,
+          type = 'slider'
         )
     })
   })
