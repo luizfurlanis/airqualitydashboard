@@ -96,9 +96,34 @@ server <- function(input,output,session) {
 As you can see, differently that leaflet map, the plots are not needed here, because it is only a chart, not a map or a tribble that need a ploting functions,
 so with only these simple commands you already create your pie chart, to use whatever you want.
 
-To create the second graphic we use echart4r again, but now it is another function. We will use 
+To create the second graphic we use echart4r again, but now it is another function. We will use a bar chart with a slider zoom.
 
-Now that you have your map and graphic, you can combine them in a Shiny app like this one, or use how you desire to. Have fun :smiley:
+Bar chart creation:
+```r
+ui <- fluidPage(
+
+  echarts4rOutput('barchart')
+)
+
+server <- function(input,output,session) {
+
+    output$barchart <- renderEcharts4r({
+      data |>
+        e_charts(Country) |>
+        e_bar(Average) |>
+        e_tooltip() |>
+        e_legend(show = FALSE) |>
+        e_title("Average AQI") |>
+        e_datazoom(
+          type = 'slider'
+        )
+    })
+}
+```
+You can see that this graphic is not so different to the first one in matters of code, but when you see the output, you can realise that are two completly different charts,
+to better visualization of the user, it was introduced de `e_datazoom()`, on that case the slider type.
+
+Now that you have your map and both graphics, you can combine them in a Shiny app like this one, or use how you desire to. Have fun :smiley:
 
 
 
