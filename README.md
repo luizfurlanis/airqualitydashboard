@@ -49,7 +49,7 @@ Ploting the data:
 ```r
 observe({
 
-  leafletProxy(session$ns("leaflet")) %>%
+  leafletProxy("leaflet") %>%
       clearMarkers() %>%
       addCircleMarkers(
         data = map_country,
