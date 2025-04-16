@@ -23,6 +23,9 @@ md.graphic <- function(id = 'graphic', data) {
   })
 }
 
+
+# second graphic ----------------------------------------------------------
+
 md.second_graphics_UI <- function(id = 'linegraphic') {
   ns <- NS(id)
 

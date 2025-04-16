@@ -27,8 +27,3 @@ df.second_graph <- df.media |>
   summarise(Country, Average) |>
   arrange(Average)
 
-
-# df.count_country <- df.air_pollution |>
-#   select(Country, AQI.Value) |>
-#   group_by(Country) |>
-#   summarise(AQI.Value = sum(AQI.Value))
