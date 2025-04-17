@@ -19,7 +19,7 @@ ui <- page_navbar(
         md.graphic_UI(),
         md.second_graphics_UI()
       )
-    ),
+    )
   )
 )
 
