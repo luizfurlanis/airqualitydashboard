@@ -15,7 +15,7 @@ md.map <- function(id = 'map', map_country) {
 
     radius = sqrt(map_country$AQI.Value) * 0.2
 
-    leafletProxy(session$ns("leaflet")) %>%
+    leafletProxy("leaflet") %>%
       clearMarkers() %>%
       addCircleMarkers(
         data = map_country,

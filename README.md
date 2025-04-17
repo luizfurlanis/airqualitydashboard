@@ -49,7 +49,7 @@ Ploting the data:
 ```r
 observe({
 
-  leafletProxy(session$ns("leaflet")) %>%
+  leafletProxy("leaflet") %>%
       clearMarkers() %>%
       addCircleMarkers(
         data = map_country,
@@ -120,8 +120,8 @@ server <- function(input,output,session) {
     })
 }
 ```
-You can see that this graphic is not so different to the first one in matters of code, but when you see the output, you can realise that are two completly different charts,
-to better visualization of the user, it was introduced de `e_datazoom()`, on that case the slider type.
+You can see that this graphic is not so different to the first one in matters of code, but when you see the output, you can realise that are two completly different charts and
+to better visualization for the user, it was introduced de `e_datazoom()`, on this espicific case, the slider type.
 
 Now that you have your map and both graphics, you can combine them in a Shiny app like this one, or use how you desire to. Have fun :smiley:
 
